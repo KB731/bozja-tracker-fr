@@ -439,7 +439,52 @@ zadnor_data = {
 		]
 	},
 };
+fr = {
+  // Bozja
+  "Kill It with Fire": "Grandeur et pestilence",
+  "The Baying of the Hound(s)": "Le chien des enfers",
+  "Vigil for the Lost": "Vigile de feu",
+  "Aces High": "Force divine",
+  "The Shadow of Death's Hand": "Les ailes noires de la mort",
+  "The Final Furlong": "Menace spectrale",
+  "The Hunt for Red Choctober": "Une ruée en rouge",
+  "Beast of Man": "Le Roi bestial",
+  "The Fires of War": "Brasier de guerre",
+  "Patriot Games": "Les fusils du patriote",
+  "Trampled under Hoof": "L'œil du malin",
+  "And the Flames Went Higher": "L'envol du phénix",
+  "Metal Fox Chaos": "Le guerrier de métal",
+  "Rise of the Robots": "Le soulèvement des machines",
+  "Where Strode the Behemoth": "Le mastodonte enragé",
 
+  // Zadnor
+  "On Serpent's Wings": "Zirnitrop",
+  "Feeling the Burn": "On arrête le progrès",
+  "The Broken Blade": "Dabog l'hyper-renforcé",
+  "From Beyond the Grave": "Le Sycophante",
+  "With Diremite and Main": "C'est dans ma nature",
+  "Here Comes The Cavalry": "Un cavalier qui surgit hors de la nuit",
+  "Head of the Snake": "Mener par l'exemple",
+  "There Would Be Blood": "Le Roi des cendres",
+  "Never Cry Wolf": "Et n'y Hród'viens plus !",
+  "Time to Burn": "Le Titan",
+  "Lean, Mean, Magitek Machines": "Réusinage de code",
+  "Worn to a Shadow": "Oiseau d'enfer",
+  "A Familiar Face": "Le Grand Ordonnateur",
+  "Looks to Die For": "Écaillage en règle",
+  "Taking the Lyon's Share": "La revanche de Lyon",
+
+  // Escarmouches (non vérifiées, voir plus bas)
+  "More Machine Now than Man": "Des machines et des hommes",
+  "Unicorn Flakes": "La licorne des plaines",
+  "For Absent Friends, Of Steel and Flame": "Le fer et le feu",
+
+  // Boutons
+  "Pop": "Pop", "Reset": "Réinit.", "Available": "Disponible"
+};
+function tr(s) { return (s in fr) ? fr[s] : s; }
+rank_names = {1: "C", 2: "B", 3: "A"};
+	
 title_str = "???";
 
 if (window.location.hash == "#zadnor")
@@ -700,7 +745,7 @@ function update_data(force = false)
 			else if (remaining >= 1)
 				meter_text.innerText = Math.floor(remaining) + 's';
 			else
-				meter_text.innerHTML = '<small>Available</small>';
+				meter_text.innerHTML = '<small>' + tr('Available') + '</small>';
 
 			/** @type {HTMLElement} */ let meter_outer = meter.getElementsByClassName("meter-outer")[0];
 			/** @type {HTMLElement} */ let meter_inner = meter.getElementsByClassName("meter-inner")[0];
@@ -792,7 +837,7 @@ setInterval(update_data, 1000);
 <template id="tracker-row-series-tpl">
 	<td><img src="tbl-arrow.png" loading="lazy" width=24 height=48></td>
 	<td><img src="{{entry.type}}.png" loading="lazy" width=32 height=32><div style="width: 0; height: 0; position: relative;">{{icon_img}}</div></td>
-	<td>{{entry.name}}{{duel_text}}</td>
+	<td>{{tr(entry.name)}}{{duel_text}}</td>
 </template>
 <template id="tracker-row-dummy-series-tpl">
 	<td></td>
@@ -803,7 +848,7 @@ setInterval(update_data, 1000);
 	<button class="btn pop-btn">Pop</button>
 </template>
 <template id="btn-reset-tpl">
-	<button class="btn reset-btn">Reset</button>
+	<button class="btn reset-btn">Réinit.</button>
 </template>
 <template id="tracker-row-tail-tpl">
 	<td>
