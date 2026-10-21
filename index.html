@@ -479,11 +479,30 @@ fr = {
   "Unicorn Flakes": "La licorne des plaines",
   "For Absent Friends, Of Steel and Flame": "Le fer et le feu",
 
+  // Ennemis
+  "Roader": "Magna rouleur de la 4e légion",
+  "Deathclaw": "Griffe de mort de la 4e légion",
+  "Nimrod": "Nimrod de la 4e légion",
+  "Slasher": "Lacératrice de la 4e légion",
+  "Avenger": "Vengeur de la 4e légion",
+  "Gunship": "Vaisseau de la 4e légion",
+  "Vanguard": "Avant-garde de la 4e légion",
+  "Hexadrone": "Hexadrone de la 4e légion",
+  "Armored Weapon": "Arme blindée de la 4e légion",
+  "Scorpion": "Scorpion magitek de la 4e légion",
+  "Infantry": "Fantassin de la 4e légion",
+  "Satellite": "Satellite de la 4e légion",
+  "Colossus": "Colosse de la 4e légion",
+  "Death-machine": "Mécacharogne de la 4e légion",
+  "Helldiver": "Plongeur infernal de la 4e légion",
+  "Cavalry": "Cavalier de la 4e légion",
+  "Rearguard": "Arrière-garde de la 4e légion",
+
   // Boutons
   "Pop": "Pop", "Reset": "Réinit.", "Available": "Disponible"
 };
 function tr(s) { return (s in fr) ? fr[s] : s; }
-rank_names = {1: "C", 2: "B", 3: "A"};
+rank_names = {1: "I", 2: "II", 3: "III"};
 	
 title_str = "???";
 
@@ -831,7 +850,7 @@ setInterval(update_data, 1000);
 <template id="tracker-row-tpl">
 	<tr class="tracker-row tracker-row-inactive">
 		<td><img src="{{row.mob}}.png" loading="lazy" width=48 height=48></td>
-		<td>{{row.mob}}<br><img src="rank{{row.mob_rank}}.png" loading="lazy" title="Rank {{rank_names[row.mob_rank]}}"></td>
+		<td>{{tr(row.mob)}}<br><img src="rank{{row.mob_rank}}.png" loading="lazy" title="Rang {{rank_names[row.mob_rank]}}"></td>
 	</tr>
 </template>
 <template id="tracker-row-series-tpl">
